@@ -9,6 +9,18 @@
       src="https://kit.fontawesome.com/cdb8c29462.js"
       crossorigin="anonymous"
     ></script>
+    <script src="index.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "CZXOe5qbWYx1qf1JC",
+        });
+      })();
+    </script>
   </head>
   <body>
     <section id="landing-page">
@@ -21,6 +33,7 @@
             <a
               href="#"
               class="nav__link--anchor link__hover--effect link__hover--effect--black"
+              onclick="toggleModal()"
               >About</a
             >
           </li>
@@ -35,6 +48,7 @@
             <a
               href="#"
               class="nav__link--anchor link__hover--effect link__hover--effect--black"
+              onclick="toggleModal()"
               >Contact</a
             >
           </li>
@@ -57,7 +71,8 @@
             passion for building user-friendly, responsive, and clean web
             applications.
             <br />
-            Here's a bit more <b class="orange">about me.</b>
+            Here's a bit more
+            <b class="orange clickable" onclick="toggleModal()">about me.</b>
           </p>
           <div class="social__list">
             <a
@@ -81,7 +96,7 @@
           </div>
         </div>
       </header>
-      <button class="mail__btn click">
+      <button class="mail__btn click" onclick="toggleModal()">
         <i class="fa-solid fa-envelope"></i>
       </button>
       <a href="#projects" class="scroll"
@@ -143,13 +158,17 @@
           </div>
         </div>
         <div class="modal__half modal__contact">
+          <i
+            class="fa-solid fa-xmark modal__exit click"
+            onclick="toggleModal()"
+          ></i>
           <h3 class="modal__title modal__title--contract">
             Let's have a Chat!
           </h3>
           <h3 class="modal__subtitle modal__subtitle--contract">
             I would love to hear from You.
           </h3>
-          <form id="contact__form" action="">
+          <form id="contact__form" onsubmit="contact(event)">
             <div class="form__item">
               <label class="form__item--label">Name</label>
               <input type="text" name="user_name" class="input" required />
@@ -178,7 +197,6 @@
             Thanks for the message! Looking forward to speaking to you soon.
           </div>
         </div>
-        <i class="fa-solid fa-xmark modal__exit click"></i>
       </div>
     </section>
 
@@ -274,12 +292,12 @@
           </figure>
           <div class="footer__social--list">
             <a
-              href=""
+              href="https://github.com/HunterKastner"
               class="footer__social--link link__hover--effect link__hover--effect--white"
               >Github</a
             >
             <a
-              href=""
+              href="https://www.linkedin.com/in/hunter-kastner/"
               class="footer__social--link link__hover--effect link__hover--effect--white"
               >Linkedin</a
             >
@@ -289,7 +307,7 @@
               >Contact</a
             >
             <a
-              href=""
+              href="./assets/resume.docx"
               class="footer__social--link link__hover--effect link__hover--effect--white"
               >Resume</a
             >
