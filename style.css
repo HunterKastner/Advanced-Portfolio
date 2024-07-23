@@ -440,7 +440,7 @@ nav {
 }
 
 .modal__overlay {
-    position: absolute;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -448,12 +448,12 @@ nav {
   display: none;
   align-items: center;
   justify-content: center;
+  z-index: -1;
 }
 
 .modal__overlay--loading {
   background-color: #242424;
   font-size: 80px;
-  z-index: -1;
 }
 
 .fa-spinner {
@@ -475,7 +475,6 @@ nav {
     font-weight: 700;
     text-align: center;
     padding: 28px;
-    z-index: -1;
 }
 
 .modal__overlay--visible {
